@@ -115,6 +115,38 @@ And here is the `package.json` after modifications by `xdn init`:
 
 The next few sections of this guide explain how the XDN interacts with Nuxt's routing, which is important if you are migrating an existing application. If you just created a new nuxt app, you can jump to [Running Locally](#section_running_locally) and come back to these sections later.
 
+## Prefetching
+
+The `xdn init` command adds a service worker based on [Workbox](https://developers.google.com/web/tools/workbox) at `sw/service-worker.js`.  If you have an existing service worker that uses workbox, you can copy its contents into `sw/service-worker.js` and simply add the following to your service worker:
+
+```js
+import { Prefetcher } from '@xdn/prefetch/sw'
+
+new Prefetcher().route()
+```
+
+The above allows you to prefetch pages from the XDN's edge cache to greatly improve browsing speed. To prefetch a page, add the `Prefetch` component from `@xdn/vue` to any `router-link` or `nuxt-link` element:
+
+```jsx
+<script>
+  import { Prefetch } from '@xdn/vue'
+</script>
+
+<template>
+  <ul v-for="product in products">
+    <li>
+      <Prefetch v-bind:url="'/api/' + product.url">
+        <nuxt-link v-bind:to="product.url">
+          <img v-bind:src="product.thumbnail" />
+        </nuxt-link>
+      </Prefetch>
+    </li>
+  </ul>
+</template>
+```
+
+The `Prefetch` component fetches data for the linked page from the XDN's edge cache and adds it to the service worker's cache when the link becomes visible in the viewport. When the user taps on the link, the page transition will be instantaneous because the browser won't need to fetch data from the network.
+
 ## Routing
 
 The XDN supports Nuxt.js's built-in routing scheme. The default `routes.js` file created by `xdn init` sends all requests to Nuxt.js via a fallback route:
