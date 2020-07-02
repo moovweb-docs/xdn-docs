@@ -128,10 +128,6 @@ new Prefetcher().route()
 The above allows you to prefetch pages from the XDN's edge cache to greatly improve browsing speed. To prefetch a page, add the `Prefetch` component from `@xdn/vue` to any `router-link` or `nuxt-link` element:
 
 ```jsx
-<script>
-  import { Prefetch } from '@xdn/vue'
-</script>
-
 <template>
   <ul v-for="product in products">
     <li>
@@ -143,6 +139,15 @@ The above allows you to prefetch pages from the XDN's edge cache to greatly impr
     </li>
   </ul>
 </template>
+
+<script>
+  import { Prefetch } from '@xdn/vue'
+  export default {
+    components: {
+      Prefetch,
+    },
+  } 
+</script>
 ```
 
 The `Prefetch` component fetches data for the linked page from the XDN's edge cache and adds it to the service worker's cache when the link becomes visible in the viewport. When the user taps on the link, the page transition will be instantaneous because the browser won't need to fetch data from the network.

@@ -104,15 +104,20 @@ If you need to prefetch a different url, you can do so using the `url` prop:
 The `@xdn/vue` package provides a `Prefetch` component that you can wrap around any link to prefetch the link when it becomes visible in the viewport:
 
 ```jsx
-<script>
-  import Prefetch from '@xdn/vue/Prefetch'
-</script>
-
 <template>
   <Prefetch v-bind:url="/api/for/some/page">
     <router-link v-bind:to="/some/page">Some page</router-link>
   </Prefetch>
 </template>
+
+<script>
+  import Prefetch from '@xdn/vue/Prefetch'
+  export default {
+    components: {
+      Prefetch,
+    },
+  }
+</script>
 ```
 
 By default `Prefetch` will fetch and cache the URL in the link's `to` attribute (for both `router-link` and `nuxt-link`). If you have a single page app, you most likely want to prefetch an API call for the page rather than the page's HTML.  The example above shows you how to set the `url` property to control which URL is prefetched.
