@@ -38,12 +38,34 @@ install()
 
 ## Prefetching a URL
 
-To prefetch a URL, call the `prefetch` function from `@xdn/prefetch/window`:
+To prefetch a URL, call the `prefetch` function from `@xdn/prefetch/window`. The simple form of this function works for most URLs:
 
 ```js
 import { prefetch } from '@xdn/prefetch/window'
 
 prefetch('/some/url')
+```
+
+There are also some additional options that can be passed to the `prefetch` function, should you need more control over the prefetch requests:
+
+```js
+import { prefetch } from '@xdn/prefetch/window'
+
+const bodyValues = {
+  bodyParam: 'my request body param',
+}
+
+prefetch(
+  '/some/url',
+  'fetch', // used for the "as" attribute of the <link> tag that is added
+  {
+    body: JSON.stringify(bodyValues), // can be used to pass a body for a POST request
+    headers: {
+      // headers can be changed as necessary for your request:
+      'content-type': 'application/json',
+    },
+  },
+)
 ```
 
 Prefetch requests are given the lowest priority. This ensures that they do not block more critical requests like API calls, images, scripts, and navigation.
