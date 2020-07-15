@@ -152,5 +152,15 @@
         "href": "/guides/[...guide]"
       }
     ]
+  },
+  {
+    "text": "Supplemental",
+    "items": [
+      {
+        "text": "SpeedCurve Performance Monitoring",
+        "as": "/guides/speedcurve",
+        "href": "/guides/[...guide]"
+      }
+    ]
   }
 ]
