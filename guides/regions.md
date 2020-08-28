@@ -12,7 +12,7 @@ Moovweb XDN has multiple global regions in which it will automatically provision
 The XDN is available in the following global regions:
 
 * Americas: Eastern US and Western US
-* Europe: Ireland, UK, Western Europe, Northern Europe, Central Europe
+* Europe: Western Europe (Ireland, UK), Northern Europe, Central Europe
 * Asia: Japan
 * Oceania: Australia
 
