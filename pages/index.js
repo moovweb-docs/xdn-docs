@@ -108,7 +108,7 @@ const Home = ({ navData }) => {
       <div className={classes.hero}>
         <MoovwebXDN className={classes.logo} />
         <Typography variant="h2" style={{ maxWidth: 800 }}>
-          <div style={{ position: 'relative' }}>Infrastructure for sub-second dynamic websites</div>
+          <div style={{ position: 'relative' }}>Infrastructure for sub-second dynamic websites, with integrated split testing</div>
         </Typography>
       </div>
       <Grid container className={classes.frameworks}>
