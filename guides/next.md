@@ -8,6 +8,25 @@ __XDN only supports Node.js version 12 and higher__
 
 If you do not have Node.js installed on your system, download and install it from official [Node.js downloads](https://nodejs.org/en/download/) page. Select the download labeled "LTS (Recommended For Most Users)" and that matches your operating system, and run the installer. Note that the installer for Node.js will also install npm.
 
+To check the installed node version, use the following:
+
+```bash
+node --version
+
+# Output should be something like
+# v15.0.1
+```
+
+To update node version, you can use the following
+
+```bash
+# To update the local version
+npm i node
+# OR
+# To update the globally installed node version
+npm i -g node
+```
+
 ## Getting Started
 
 If you don't already have a Next.js application, you can create one using:
