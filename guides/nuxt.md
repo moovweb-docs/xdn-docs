@@ -9,6 +9,11 @@ This Nuxt.js example app uses server-side rendering and prefetching to provide l
 [Try the Nuxt.js SSR Example Site](https://moovweb-docs-xdn-nuxt-example-default.moovweb-edge.io/category/hats?button)
 [View the Code](https://github.com/moovweb-docs/xdn-examples/tree/main/xdn-nuxt-example?button)
 
+This Nuxt.js example app features Incremental Static (Re)Generation (ISG) with server-side rendering and prefetching to provide lightening-fast transitions between pages.
+
+[Try the Nuxt.js ISG Example Site](https://moovweb-docs-xdn-nuxt-isg-example-default.moovweb-edge.io/category/hats?button)
+[View the Code](https://github.com/moovweb-docs/xdn-examples/tree/main/xdn-nuxt-isg-example?button)
+
 ## Install Node.js and npm
 
 **XDN only supports Node.js version 12.x**
