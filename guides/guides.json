@@ -291,11 +291,6 @@
         "text": "Changelog",
         "as": "/guides/changelog",
         "href": "/guides/[...guide]"
-      },
-      {
-        "text": "Le-Deployer Changelog",
-        "as": "/guides/le_deployer_changelog",
-        "href": "/guides/[...guide]"
       }
     ]
   }

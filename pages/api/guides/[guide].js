@@ -2,9 +2,9 @@ import fetch from 'isomorphic-fetch'
 
 export default async function guide(req, res) {
   let { version, guide } = req.query
-  let isChangelog = ['changelog', 'le_deployer_changelog'].includes(guide)
+  const isChangelog = guide === 'changelog'
 
-  // changelogs always pull from the current version
+  // changelog always pulls from the current version
   if (isChangelog) {
     version = 'current'
   }
